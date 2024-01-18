@@ -1,45 +1,53 @@
-'use client';
+// 'use client';
 
-import React, { useState } from 'react';
-import { CldUploadWidget, CldImage } from 'next-cloudinary';
+// import React, { useState } from 'react';
+// import { CldUploadWidget, CldImage } from 'next-cloudinary';
 
-interface CloudinaryResult {
-  public_id: string;
-}
+// interface CloudinaryResult {
+//   public_id: string;
+// }
+
+// const UploadPage = () => {
+//   const [publicId, setPublicId] = useState('');
+
+//   return (
+//     <>
+//       {publicId && (
+//         <CldImage
+//           src={publicId}
+//           width={270}
+//           height={180}
+//           alt="A coffee image"
+//         />
+//       )}
+//       <CldUploadWidget
+//         uploadPreset="efpp24nf"
+//         options={{ sources: ['local'], multiple: false, maxFiles: 5 }}
+//         onUpload={(result, widget) => {
+//           if (result.event !== 'success') {
+//             return;
+//           }
+
+//           const info = result.info as CloudinaryResult;
+//           setPublicId(info.public_id);
+//         }}
+//       >
+//         {({ open }) => (
+//           <button className="btn btn-primary" onClick={() => open()}>
+//             Upload
+//           </button>
+//         )}
+//       </CldUploadWidget>
+//     </>
+//   );
+// };
+
+// export default UploadPage;
+
+import React from 'react';
 
 const UploadPage = () => {
-  const [publicId, setPublicId] = useState('');
-
-  return (
-    <>
-      {publicId && (
-        <CldImage
-          src={publicId}
-          width={270}
-          height={180}
-          alt="A coffee image"
-        />
-      )}
-      <CldUploadWidget
-        uploadPreset="efpp24nf"
-        options={{ sources: ['local'], multiple: false, maxFiles: 5 }}
-        onUpload={(result, widget) => {
-          if (result.event !== 'success') {
-            return;
-          }
-
-          const info = result.info as CloudinaryResult;
-          setPublicId(info.public_id);
-        }}
-      >
-        {({ open }) => (
-          <button className="btn btn-primary" onClick={() => open()}>
-            Upload
-          </button>
-        )}
-      </CldUploadWidget>
-    </>
-  );
+  return <div>UploadPage</div>;
 };
 
 export default UploadPage;
